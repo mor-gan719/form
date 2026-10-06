@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo */
+.logo-wrapper {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-logo {
+  max-width: 110px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Pages Display Logic */
+.page {
+  width: 100%;
+  display: none !important;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.page.active {
+  display: flex !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.title {
+  color: #8C1D21;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Form Layout */
+.form {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Fields */
+input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #FDF0ED;
+  border: 1.5px solid #F5C6CB;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #495057;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]::placeholder {
+  color: #888888;
+}
+
+input[type="text"]:focus {
+  border-color: #8C1D21;
+  box-shadow: 0 0 0 3px rgba(140, 29, 33, 0.15);
+}
+
+/* Error validation styling */
+input[type="text"].invalid {
+  border-color: #dc3545 !important;
+  background-color: #FFF5F5 !important;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25) !important;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Custom Error Tooltip Box */
+.error-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 20px;
+  z-index: 50;
+  background-color: #ffffff;
+  border: 1.5px solid #666666;
+  border-radius: 6px;
+  padding: 8px 14px 8px 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  gap: 10px;
+}
+
+.error-tooltip.show {
+  display: flex !important;
+}
+
+.error-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-left: 1.5px solid #666666;
+  border-top: 1.5px solid #666666;
+  transform: rotate(45deg);
+}
+
+.exclamation-box {
+  width: 22px;
+  height: 22px;
+  background-color: #8C1D21;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.error-tooltip span {
+  font-size: 0.9rem;
+  color: #222222;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #8C1D21;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #70161a;
+}
+
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* Page 11 Timer */
+.timer-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.timer-bg {
+  fill: #FDF0ED;
+  stroke: #FFB3BA;
+  stroke-width: 10;
+}
+
+.timer-progress {
+  fill: none;
+  stroke: #8C1D21;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 263.89;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer-text {
+  position: absolute;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #8C1D21;
+  user-select: none;
+}
+
+.processing-text {
+  font-size: 0.95rem;
+  color: #555555;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Page 12 Purple Card */
+.purple-card-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 4px;
+}
+
+.purple-card {
+  background-color: #B48CFF;
+  border-radius: 16px;
+  padding: 50px 24px;
+  border-left: 8px solid #241432;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-description {
+  color: #241432;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}

